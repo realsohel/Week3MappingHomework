@@ -23,4 +23,11 @@ public class SubjectController {
     public SubjectEntity createSubject(@RequestBody SubjectEntity subjectEntity){
         return subjectService.createSubject(subjectEntity);
     }
+
+    @PutMapping("/{subjectId}/assignSubjectsToStudents/{studentId}")
+    public SubjectEntity assignSubjectsToStudents(
+            @PathVariable Long subjectId,
+            @PathVariable Long studentId){
+        return subjectService.assignSubjectsToStudents(subjectId,studentId);
+    }
 }

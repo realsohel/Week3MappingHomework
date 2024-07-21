@@ -30,6 +30,12 @@ public class ProfessorController {
             @PathVariable Long professorId,
             @PathVariable Long subjectId){
         return professorService.assignProfessorToSubject(professorId,subjectId);
+    }
 
+    @PutMapping("/{professorId}/professorsToStudent/{studentId}")
+    public ProfessorEntity professorsToStudent(
+            @PathVariable Long professorId,
+            @PathVariable Long studentId){
+        return professorService.professorsToStudent(professorId,studentId);
     }
 }
