@@ -18,4 +18,9 @@ public class StudentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+
+    @OneToOne(mappedBy = "student")
+    @JoinColumn(name = "admission details")
+    private AdmissionRecordEntity admissionRecord;
+
 }

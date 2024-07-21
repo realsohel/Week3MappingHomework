@@ -24,4 +24,15 @@ public class AdmissionRecordController {
     public AdmissionRecordEntity creategetadmissionRecord(@RequestBody AdmissionRecordEntity admissionRecordEntity){
         return admissionRecordService.creategetadmissionRecord(admissionRecordEntity);
     }
+
+    @PutMapping("/{admissionRecordId}/admissiondetails/{studentId}")
+    public AdmissionRecordEntity admissionRecordOfStudent(
+            @PathVariable Long admissionRecordId,
+            @PathVariable Long studentId){
+
+        return admissionRecordService.admissionRecordOfStudent(admissionRecordId,studentId);
+
+    }
+
+
 }

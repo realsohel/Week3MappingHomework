@@ -18,4 +18,8 @@ public class AdmissionRecordEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Integer fees;
+
+    @OneToOne
+    @JoinColumn(name = "student")
+    private StudentEntity student;
 }
